@@ -1,0 +1,247 @@
+/* Home Page Styling - Royal Blue, Silver, and White Theme */
+/* Force CSS enforcement over Bootstrap */
+
+/* Color Variables */
+:root {
+  --royal-blue: #4169e1;
+  --royal-blue-dark: #1e3a8a;
+  --royal-blue-light: #6495ed;
+  --silver: #c0c0c0;
+  --silver-light: #e5e5e5;
+  --silver-dark: #808080;
+  --white: #ffffff;
+  --text-dark: #2d2d2d;
+}
+
+/* Home Page Container - High Specificity */
+body .container .home-container {
+  background: linear-gradient(
+    135deg,
+    var(--white) 0%,
+    var(--silver-light) 50%,
+    var(--royal-blue-light) 100%
+  ) !important;
+  min-height: 80vh !important;
+  padding: 40px 20px !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(65, 105, 225, 0.2) !important;
+  margin: 20px auto !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Decorative Background Elements - High Specificity */
+body .container .home-container::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -50px !important;
+  right: -50px !important;
+  width: 200px !important;
+  height: 200px !important;
+  background: radial-gradient(
+    circle,
+    var(--royal-blue-light),
+    transparent
+  ) !important;
+  opacity: 0.1 !important;
+  border-radius: 50% !important;
+}
+
+body .container .home-container::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -30px !important;
+  left: -30px !important;
+  width: 150px !important;
+  height: 150px !important;
+  background: radial-gradient(circle, var(--silver), transparent) !important;
+  opacity: 0.1 !important;
+  border-radius: 50% !important;
+}
+
+/* Main Heading - High Specificity */
+body .container .home-container h1 {
+  color: var(--royal-blue-dark) !important;
+  font-size: 3.5rem !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  margin-bottom: 30px !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1) !important;
+  background: linear-gradient(
+    45deg,
+    var(--royal-blue),
+    var(--royal-blue-light)
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Welcome Message Styling - High Specificity */
+body .container .home-container .welcome-section {
+  background: var(--white) !important;
+  padding: 30px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 25px rgba(65, 105, 225, 0.15) !important;
+  border: 2px solid var(--silver-light) !important;
+  margin: 30px 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body .container .home-container .welcome-section::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 4px !important;
+  background: linear-gradient(
+    90deg,
+    var(--royal-blue),
+    var(--royal-blue-light),
+    var(--silver)
+  ) !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+/* Paragraph Styling - High Specificity */
+body .container .home-container p {
+  color: var(--text-dark) !important;
+  font-size: 1.2rem !important;
+  line-height: 1.8 !important;
+  margin-bottom: 20px !important;
+  text-align: justify !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body .container .home-container p:first-of-type {
+  font-size: 1.3rem !important;
+  font-weight: 500 !important;
+  color: var(--royal-blue-dark) !important;
+}
+
+/* Call to Action Section - High Specificity */
+body .container .home-container .cta-section {
+  background: linear-gradient(
+    135deg,
+    var(--royal-blue),
+    var(--royal-blue-dark)
+  ) !important;
+  color: var(--white) !important;
+  padding: 25px !important;
+  border-radius: 12px !important;
+  text-align: center !important;
+  margin: 30px 0 !important;
+  box-shadow: 0 6px 20px rgba(65, 105, 225, 0.3) !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body .container .home-container .cta-section h2 {
+  color: var(--white) !important;
+  margin-bottom: 15px !important;
+  font-size: 1.8rem !important;
+}
+
+body .container .home-container .cta-section p {
+  color: var(--silver-light) !important;
+  margin-bottom: 0 !important;
+}
+
+/* Feature Cards - High Specificity */
+body .container .home-container .feature-cards {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 20px !important;
+  margin: 30px 0 !important;
+}
+
+body .container .home-container .feature-card {
+  background: var(--white) !important;
+  padding: 20px !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--silver-light) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body .container .home-container .feature-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 25px rgba(65, 105, 225, 0.2) !important;
+  border-color: var(--royal-blue-light) !important;
+}
+
+body .container .home-container .feature-card h3 {
+  color: var(--royal-blue) !important;
+  margin-bottom: 10px !important;
+  font-size: 1.3rem !important;
+}
+
+body .container .home-container .feature-card p {
+  color: var(--text-dark) !important;
+  font-size: 1rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* Button Styling - High Specificity */
+body .container .home-container .btn-royal {
+  background: linear-gradient(
+    135deg,
+    var(--royal-blue),
+    var(--royal-blue-dark)
+  ) !important;
+  border: none !important;
+  color: var(--white) !important;
+  padding: 12px 30px !important;
+  border-radius: 25px !important;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(65, 105, 225, 0.3) !important;
+}
+
+body .container .home-container .btn-royal:hover {
+  background: linear-gradient(
+    135deg,
+    var(--royal-blue-dark),
+    var(--royal-blue)
+  ) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(65, 105, 225, 0.4) !important;
+  color: var(--white) !important;
+  text-decoration: none !important;
+}
+
+/* Responsive Design - High Specificity */
+@media (max-width: 768px) {
+  body .container .home-container {
+    padding: 20px 15px !important;
+    margin: 10px !important;
+  }
+
+  body .container .home-container h1 {
+    font-size: 2.5rem !important;
+  }
+
+  body .container .home-container .welcome-section {
+    padding: 20px !important;
+    margin: 20px 0 !important;
+  }
+
+  body .container .home-container p {
+    font-size: 1.1rem !important;
+  }
+
+  body .container .home-container .feature-cards {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+}
