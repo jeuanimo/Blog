@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="post-detail">
+    <h1>{{ post.title }}</h1>
+    
+    {% if post.image %}
+    <div class="post-image mb-3">
+      <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid">
+    </div>
+    {% endif %}
+    
+    <div class="post-meta text-muted mb-3">
+      <p>Posted on {{ post.created_at|date:"F d, Y at g:i A" }}</p>
+      {% if post.updated_at != post.created_at %}
+      <p>Last updated: {{ post.updated_at|date:"F d, Y at g:i A" }}</p>
+      {% endif %}
+    </div>
+    
+    <div class="post-content">
+      {{ post.content|linebreaks }}
+    </div>
+    
+    <div class="mt-4">
+      <a href="{% url 'posts:list' %}" class="btn btn-secondary">Back to Posts</a>
+      <a href="{% url 'posts:delete' post.pk %}" class="btn btn-danger">Delete Post</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Delete Post{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Delete Post</h1>
+  
+  <div class="alert alert-warning" role="alert">
+    <h4 class="alert-heading">Are you sure?</h4>
+    <p>Are you sure you want to delete the post: <strong>{{ post.title }}</strong>?</p>
+    <p>This action cannot be undone.</p>
+  </div>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes, Delete Post</button>
+    <a href="{% url 'posts:detail' post.pk %}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+{% endblock %}
