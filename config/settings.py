@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'pages',
-    
+    'posts',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -119,7 +122,18 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 
+# Media files (User uploaded content)
+MEDIA_URL = 'media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Crispy Forms
+CRISPY_ALLOWED_TEMPLATE_PACKS = ['bootstrap5']
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+# Login/Logout redirects
+LOGIN_REDIRECT_URL = 'pages:home'
