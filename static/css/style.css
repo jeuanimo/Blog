@@ -291,6 +291,38 @@ a:hover {
     border: 1px solid var(--border-color);
 }
 
+/* Error Pages */
+.error-container {
+    padding: 3rem 1rem;
+}
+
+.error-container .display-1 {
+    font-size: 8rem;
+    font-weight: 700;
+}
+
+.error-403 {
+    color: var(--royal-blue);
+}
+
+.error-404 {
+    color: var(--royal-blue);
+}
+
+.alert-info {
+    background-color: rgba(65, 105, 225, 0.15);
+    border-color: var(--royal-blue);
+    color: var(--text-primary);
+}
+
+.error-container .alert-danger,
+.error-container .alert-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -301,3 +333,10 @@ a:hover {
         font-size: 1.75rem;
     }
 }
+
+@media (max-width: 576px) {
+    .error-container .display-1 {
+        font-size: 5rem;
+    }
+}
+

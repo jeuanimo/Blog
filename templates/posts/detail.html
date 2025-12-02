@@ -56,13 +56,19 @@
       <div class="card mb-3">
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-start">
-            <div>
+            <div class="flex-grow-1">
               <h6 class="card-subtitle mb-2">
                 <strong>{{ comment.author.username }}</strong>
                 <small class="text-muted">- {{ comment.created_on|date:"F d, Y at g:i A" }}</small>
               </h6>
               <p class="card-text">{{ comment.body|linebreaks }}</p>
             </div>
+            {% if user.is_authenticated and user == comment.author %}
+            <div class="btn-group-vertical ms-3">
+              <a href="{% url 'posts:comment_edit' comment.pk %}" class="btn btn-sm btn-warning">Edit</a>
+              <a href="{% url 'posts:comment_delete' comment.pk %}" class="btn btn-sm btn-danger">Delete</a>
+            </div>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -76,12 +82,9 @@
     <div class="card">
       <div class="card-body">
         <h4>Add a Comment</h4>
-        <form method="post" action="{% url 'posts:add_comment' post.pk %}">
+        <form method="post">
           {% csrf_token %}
-          <div class="mb-3">
-            <label for="id_body" class="form-label">Your Comment</label>
-            <textarea name="body" id="id_body" class="form-control" rows="4" required></textarea>
-          </div>
+          {{ form|crispy }}
           <button type="submit" class="btn btn-primary">Post Comment</button>
         </form>
       </div>
