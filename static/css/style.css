@@ -230,20 +230,64 @@ html[data-theme="light"] .btn-close {
 
 /* Forms */
 .form-control {
-    background-color: var(--bg-card);
-    border-color: var(--border-color);
-    color: var(--text-primary);
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
 }
 
 .form-control:focus {
-    background-color: var(--bg-card);
-    border-color: var(--royal-blue);
-    color: var(--text-primary);
-    box-shadow: 0 0 0 0.2rem rgba(65, 105, 225, 0.25);
+    background-color: var(--bg-card) !important;
+    border-color: var(--royal-blue) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 0 0 0.2rem rgba(65, 105, 225, 0.25) !important;
 }
 
 .form-label {
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
+}
+
+.form-text {
+    color: var(--text-secondary) !important;
+}
+
+.form-check-label {
+    color: var(--text-primary) !important;
+}
+
+.invalid-feedback {
+    color: #dc3545 !important;
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary) !important;
+    opacity: 0.7;
+}
+
+/* Help text for forms */
+.helptext,
+.form-text,
+small.text-muted {
+    color: var(--text-secondary) !important;
+}
+
+/* Django crispy forms specific */
+.asteriskField {
+    color: #dc3545 !important;
+}
+
+#div_id_password1 .form-text,
+#div_id_password2 .form-text,
+#hint_id_password1,
+#hint_id_password2 {
+    color: var(--text-secondary) !important;
+}
+
+ul.errorlist {
+    color: #dc3545 !important;
+}
+
+ul.errorlist li {
+    color: #dc3545 !important;
 }
 
 /* Container */
