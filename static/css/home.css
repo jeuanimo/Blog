@@ -189,6 +189,192 @@ body .container .home-container .feature-card p {
   margin-bottom: 0 !important;
 }
 
+/* Feature Card Link Styling */
+.feature-card-link {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block !important;
+}
+
+.feature-card-link:hover {
+  text-decoration: none !important;
+}
+
+.card-arrow {
+  position: absolute !important;
+  bottom: 15px !important;
+  right: 15px !important;
+  font-size: 1.5rem !important;
+  color: var(--royal-blue) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.feature-card-link:hover .card-arrow {
+  transform: translateX(5px) !important;
+}
+
+/* Weather Widget Styling */
+.weather-card {
+  min-height: 280px !important;
+}
+
+.weather-content {
+  text-align: center !important;
+  padding: 10px 0 !important;
+}
+
+.weather-loading,
+.weather-error {
+  padding: 20px !important;
+  color: #2d2d2d !important;
+  font-style: italic !important;
+}
+
+.weather-error {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.weather-error i {
+  font-size: 2rem !important;
+  color: #1e3a8a !important;
+}
+
+.weather-location {
+  font-size: 1rem !important;
+  color: #1e3a8a !important;
+  font-weight: 600 !important;
+  margin-bottom: 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+}
+
+.weather-location i {
+  color: #1e3a8a !important;
+}
+
+.weather-temp {
+  margin: 20px 0 !important;
+}
+
+.temp-value {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: #1e3a8a !important;
+  line-height: 1 !important;
+}
+
+.weather-desc {
+  font-size: 1.1rem !important;
+  color: #2d2d2d !important;
+  margin: 15px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  font-weight: 500 !important;
+}
+
+.weather-desc i {
+  font-size: 1.5rem !important;
+  color: #1e3a8a !important;
+}
+
+.weather-details {
+  display: flex !important;
+  justify-content: space-around !important;
+  margin-top: 20px !important;
+  padding-top: 15px !important;
+  border-top: 1px solid var(--silver-light) !important;
+}
+
+.detail-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.detail-item i {
+  font-size: 1.2rem !important;
+  color: #1e3a8a !important;
+}
+
+.detail-item span {
+  font-size: 0.9rem !important;
+  color: #2d2d2d !important;
+  font-weight: 600 !important;
+}
+
+/* Quote Widget Styling */
+.quote-card {
+  min-height: 280px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.quote-content {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 15px 0 !important;
+}
+
+.quote-loading {
+  text-align: center !important;
+  padding: 20px !important;
+  color: #2d2d2d !important;
+  font-style: italic !important;
+}
+
+.quote-text {
+  position: relative !important;
+  margin-bottom: 20px !important;
+}
+
+.quote-text p {
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  color: #2d2d2d !important;
+  font-style: italic !important;
+  margin: 15px 0 !important;
+  text-align: center !important;
+  font-weight: 500 !important;
+}
+
+.quote-icon-left,
+.quote-icon-right {
+  font-size: 1.5rem !important;
+  color: #1e3a8a !important;
+  opacity: 0.7 !important;
+}
+
+.quote-icon-left {
+  display: block !important;
+  text-align: left !important;
+}
+
+.quote-icon-right {
+  display: block !important;
+  text-align: right !important;
+  transform: rotate(180deg) !important;
+}
+
+.quote-author {
+  text-align: right !important;
+  font-size: 0.95rem !important;
+  color: #1e3a8a !important;
+  font-weight: 600 !important;
+  font-style: normal !important;
+  margin-top: 10px !important;
+  padding-right: 10px !important;
+}
+
 /* Button Styling - High Specificity */
 body .container .home-container .btn-royal {
   background: linear-gradient(

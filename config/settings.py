@@ -37,12 +37,27 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'crispy_forms',
     'crispy_bootstrap5',
     'pages',
     'posts',
     'accounts',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
 ]
+# allauth settings
+SITE_ID = 1
+
+# django-allauth configuration
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend', # Needed to login by username in Django admin, regardless of `allauth`
+    'allauth.account.auth_backends.AuthenticationBackend',# allauth specific authentication methods, such as login by e-mail
+
+]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -66,10 +82,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
 ]
+
+TEMPLATE_EXTENSION = '.html'
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
@@ -137,3 +156,20 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # Login/Logout redirects
 LOGIN_REDIRECT_URL = 'pages:home'
+
+
+# ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
+
+#ACCOUNT_LOGOUT_ON_GET = True
+
+### more allauth settings (Updated to latest format)
+ACCOUNT_LOGIN_METHODS = ['email']
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_UNIQUE_USERNAME = False
+
+# add the following when you are using custom user model
+# AUTH_USER_MODEL = 'accounts.CustomUser'
+
+### Email backend for Config###
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -152,16 +152,20 @@ body .container .about-container p:first-of-type {
   z-index: 1 !important;
 }
 
-.highlight-section h3 {
-  color: var(--white) !important;
+body .container .about-container .highlight-section h3 {
+  color: #ffffff !important;
   margin-bottom: 15px !important;
   font-size: 1.8rem !important;
+  font-weight: 600 !important;
 }
 
-.highlight-section p {
-  color: var(--silver-light) !important;
+body .container .about-container .highlight-section p {
+  color: #ffffff !important;
   margin-bottom: 0 !important;
   font-size: 1.1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  text-align: center !important;
 }
 
 /* Skills/Interests Cards */
