@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Account Inactive{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="mb-4">Account Inactive</h1>
+      
+      <div class="alert alert-warning" role="alert">
+        This account is currently inactive.
+      </div>
+      
+      <p>Please contact the site administrator if you believe this is an error.</p>
+      
+      <a href="{% url 'pages:home' %}" class="btn btn-primary">Return Home</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Confirm E-mail Address{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="mb-4">Confirm Your E-mail Address</h1>
+      
+      {% if confirmation %}
+        {% if can_confirm %}
+          <p>Please confirm that <a href="mailto:{{ confirmation.email_address.email }}">{{ confirmation.email_address.email }}</a> is the email address for user {{ confirmation.email_address.user }}.</p>
+          
+          <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Confirm E-mail Address</button>
+          </form>
+        {% else %}
+          <div class="alert alert-warning" role="alert">
+            Unable to confirm {{ confirmation.email_address.email }} because it is already confirmed by another account.
+          </div>
+        {% endif %}
+      {% else %}
+        <div class="alert alert-danger" role="alert">
+          This email confirmation link is invalid or has expired. Please <a href="{% url 'account_email' %}" class="alert-link">issue a new email confirmation request</a>.
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

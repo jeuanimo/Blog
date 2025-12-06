@@ -19,12 +19,17 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+# Error handlers
+handler403 = 'django.views.defaults.permission_denied'
+handler404 = 'django.views.defaults.page_not_found'
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('allauth.urls')),
     path('accounts/', include('accounts.urls')),
     path('post/', include('posts.urls')),
     path('', include('pages.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('admin/', admin.site.urls),
 ]
 
 # Serve static and media files during development
