@@ -4,3 +4,11 @@ venv/
 .venv/
 # db.sqlite3 is tracked on purpose: demo content only, accounts anonymized.
 # Create your own login with  python manage.py createsuperuser
+
+# Secrets and private data: never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.~lock.*
