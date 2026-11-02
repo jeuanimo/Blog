@@ -1,0 +1,6 @@
+
+# Virtual environment: rebuild with  python -m venv venv && pip install -r requirements.txt
+venv/
+.venv/
+# db.sqlite3 is tracked on purpose: demo content only, accounts anonymized.
+# Create your own login with  python manage.py createsuperuser
